@@ -42,7 +42,7 @@ services:
       REACT_APP_KEYCLOAK_CLIENT_ID: reports-frontend
   api:
     build:
-      context: ./API/API
+      context: ./API
       dockerfile: Dockerfile
     ports:
       - "8000:8000"
