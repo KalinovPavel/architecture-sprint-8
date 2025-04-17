@@ -119,6 +119,7 @@
         "directAccessGrantsEnabled": true,
         "attributes": {
           "pkce.code.challenge.method": "S256"
+        }
       },
       {
         "clientId": "reports-api",
