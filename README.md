@@ -1,2 +1,1 @@
-1. Собрать API: mvn clean package -DskipTests
-2. docker-compose up --build
+Проект запускается командой docker-compose up -d --build.
