@@ -1,5 +1,11 @@
+FROM maven:3.8.2-openjdk-17-slim AS build
+WORKDIR /app
+COPY pom.xml .
+COPY src ./src
+RUN echo "Build time: $(date)" && mvn clean package -DskipTests
+
 FROM openjdk:17-jdk-slim
 WORKDIR /app
-COPY /target/*.jar app.jar
-EXPOSE 8000:8000
+COPY --from=build /app/target/*.jar app.jar
+EXPOSE 8000
 ENTRYPOINT ["java", "-jar", "app.jar"]
